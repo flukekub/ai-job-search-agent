@@ -1,0 +1,39 @@
+# บริษัทที่จะสแกน + ตัวกรอง: คัดลอกเป็น config/portals.yml แล้วแก้
+# รองรับ careers_url ของ Greenhouse, Lever และ Ashby เท่านั้น (เพิ่มแหล่งอื่นได้ใน scripts/providers/)
+
+title_filter:
+  # ชื่อตำแหน่งต้องมีคำใดคำหนึ่งในนี้ (ไม่สนตัวพิมพ์เล็ก/ใหญ่)
+  positive:
+    - "Software Engineer"
+    - "Backend"
+    - "Developer"
+  # ถ้ามีคำเหล่านี้ ให้ตัดทิ้ง
+  negative:
+    - "Intern"
+    - "Principal"
+    - "Director"
+
+location_filter:
+  # สถานที่ต้องมีคำใดคำหนึ่งในนี้ ถ้าเว้นว่างไว้ = รับทุกที่
+  # ระวัง: "Remote" จะรวมงาน remote ที่จำกัดประเทศอื่นด้วย เช่น "Remote, United States"
+  allow:
+    - "Bangkok"
+    - "Thailand"
+    - "Remote"
+    - "APAC"
+
+# ข้ามประกาศที่เก่ากว่ากี่วัน (0 = ไม่กรอง)
+max_posting_age_days: 45
+
+companies:
+  - name: Agoda
+    careers_url: https://job-boards.greenhouse.io/agoda
+  - name: Anthropic
+    careers_url: https://job-boards.greenhouse.io/anthropic
+  - name: dLocal
+    careers_url: https://jobs.lever.co/dlocal
+  - name: ElevenLabs
+    careers_url: https://jobs.ashbyhq.com/elevenlabs
+  - name: Vercel
+    careers_url: https://job-boards.greenhouse.io/vercel
+    enabled: false # ปิดชั่วคราวได้

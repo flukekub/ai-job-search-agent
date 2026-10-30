@@ -1,0 +1,14 @@
+node_modules/
+
+# ข้อมูลส่วนตัว ห้าม commit
+cv.md
+config/profile.yml
+config/portals.yml
+modes/_profile.md
+
+data/*
+!data/.gitkeep
+reports/*
+!reports/.gitkeep
+output/*
+!output/.gitkeep

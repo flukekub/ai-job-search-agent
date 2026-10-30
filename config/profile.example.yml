@@ -1,0 +1,35 @@
+# ข้อมูลส่วนตัว: คัดลอกเป็น config/profile.yml แล้วแก้ (ไฟล์จริงไม่ถูก commit)
+
+candidate:
+  full_name: "ชื่อ นามสกุล"
+  email: "you@example.com"
+  phone: ""
+  location: "Bangkok, Thailand"
+  timezone: "Asia/Bangkok"
+  years_of_experience: 3
+  links:
+    - label: "LinkedIn"
+      url: "https://www.linkedin.com/in/your-handle"
+    - label: "GitHub"
+      url: "https://github.com/your-handle"
+
+target_roles:
+  - "Software Engineer"
+  - "Backend Engineer"
+
+compensation:
+  currency: "THB"
+  target_monthly: "80,000 - 120,000"
+  minimum_monthly: "70,000"
+
+work_model:
+  accept: ["remote", "hybrid", "onsite-bangkok"]
+  relocation: false
+  needs_visa_sponsorship: false
+
+language:
+  output: th # ภาษาของรายงานและสรุป
+  cv: en # ภาษาของ CV (ส่วนใหญ่ควรตรงกับภาษาของ JD)
+
+cv:
+  paper: A4 # หรือ Letter สำหรับงานในอเมริกา

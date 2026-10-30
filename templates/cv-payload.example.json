@@ -1,0 +1,47 @@
+{
+  "name": "Your Name",
+  "headline": "Backend Engineer · Go · Payments & Logistics APIs",
+  "contact": {
+    "email": "you@example.com",
+    "phone": "",
+    "location": "Bangkok, Thailand",
+    "links": [
+      { "label": "linkedin.com/in/your-handle", "url": "https://www.linkedin.com/in/your-handle" },
+      { "label": "github.com/your-handle", "url": "https://github.com/your-handle" }
+    ]
+  },
+  "summary": "Backend engineer with 3 years building payment and logistics APIs in Go and TypeScript.",
+  "experience": [
+    {
+      "company": "Example Company Co., Ltd.",
+      "role": "Software Engineer",
+      "location": "Bangkok",
+      "dates": "Jan 2024 – Present",
+      "bullets": [
+        "Built an order-tracking API in Go serving 2M requests/day",
+        "Cut p95 latency from 800ms to 250ms by adding Redis caching"
+      ]
+    },
+    {
+      "company": "Previous Startup",
+      "role": "Junior Developer",
+      "location": "Remote",
+      "dates": "Jun 2022 – Dec 2023",
+      "bullets": ["Developed admin dashboard with React and Node.js"]
+    }
+  ],
+  "projects": [
+    {
+      "name": "Side Project Name",
+      "description": "Open-source CLI that converts Thai addresses to geocodes. 150 GitHub stars.",
+      "bullets": []
+    }
+  ],
+  "skills": [
+    { "group": "Languages", "items": ["Go", "TypeScript", "Python", "SQL"] },
+    { "group": "Infra", "items": ["Docker", "Kubernetes", "AWS", "PostgreSQL", "Redis"] }
+  ],
+  "education": [
+    { "school": "Chulalongkorn University", "degree": "B.Eng. Computer Engineering", "dates": "2018 – 2022" }
+  ]
+}
