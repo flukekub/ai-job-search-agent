@@ -42,11 +42,26 @@ npm install
 node scripts/doctor.mjs --init      # คัดลอกไฟล์ตัวอย่าง แล้วตรวจว่ายังขาดอะไร
 ```
 
-จากนั้นเปิด Claude Code ในโฟลเดอร์นี้แล้วพิมพ์ `/job setup` AI จะพาสร้าง `cv.md` และแก้ไฟล์ตั้งค่าทีละขั้น
+จากนั้นเปิด AI agent ในโฟลเดอร์นี้แล้วพิมพ์ `/job setup` (หรือ `job setup`) AI จะพาสร้าง `cv.md` และแก้ไฟล์ตั้งค่าทีละขั้น
+
+### ใช้ได้กับ AI agent ไหนบ้าง
+
+skill `job` มีไฟล์จริงไฟล์เดียวที่ `.agents/skills/job/SKILL.md` (รูปแบบ [Agent Skills](https://agentskills.io) ที่หลายเจ้าใช้ร่วมกัน)
+
+| Agent | อ่าน skill จาก | วิธีเรียก |
+|---|---|---|
+| Claude Code | `.claude/skills/job` (symlink → `.agents/skills/job`) | `/job scan` |
+| Codex CLI | `.agents/skills/` | พิมพ์ `job scan` หรือ `$job` |
+| Gemini CLI | `.agents/skills/` (ต้องเปิด skills ใน settings; เช็กด้วย `/skills`) | พิมพ์ `job scan` |
+| Cursor | `.claude/skills/` | `/job` หรือพิมพ์ `job scan` |
+| GitHub Copilot (VS Code) | `.claude/skills/` | `/job` หรือพิมพ์ `job scan` |
+
+ทุกตัวอ่าน `AGENTS.md` (กฎเหล็ก) ด้วย ส่วน Claude Code อ่านผ่าน `CLAUDE.md`
+บน Windows ถ้า git ไม่สร้าง symlink ให้ (`core.symlinks=false`) ให้คัดลอก `.agents/skills/job` ไปไว้ที่ `.claude/skills/job` แทน
 
 ## คำสั่ง
 
-### ใน Claude Code
+### ใน AI agent
 
 | คำสั่ง | ทำอะไร |
 |---|---|
@@ -73,7 +88,8 @@ npm test                                        # ชุดทดสอบ
 ```
 my-career-ops/
 ├── AGENTS.md / CLAUDE.md        กฎใหญ่ที่ AI อ่านทุกครั้ง
-├── .claude/skills/job/SKILL.md  ตัวเลือก mode ของคำสั่ง /job
+├── .agents/skills/job/SKILL.md  ตัวเลือก mode ของคำสั่ง /job (ใช้ร่วมทุก agent)
+├── .claude/skills/job           symlink → .agents/skills/job
 ├── modes/
 │   ├── _shared.md               ระบบคะแนน + กติกากลาง
 │   ├── _profile.template.md     แม่แบบเป้าหมายอาชีพ → คัดลอกเป็น _profile.md
@@ -104,7 +120,7 @@ my-career-ops/
 ## ขยายต่อ
 
 - **เพิ่มแหล่งงาน:** สร้าง `scripts/providers/xxx.mjs` ที่มี `{ id, detect(url), list(slug), getJob(slug, id) }` แล้วเพิ่มลงใน `providers/index.mjs` (ดู `ashby.mjs` เป็นตัวอย่างที่สั้นที่สุด)
-- **เพิ่ม mode:** เขียน `modes/xxx.md` แล้วเพิ่มแถวในตารางของ `.claude/skills/job/SKILL.md`
+- **เพิ่ม mode:** เขียน `modes/xxx.md` แล้วเพิ่มแถวในตารางของ `.agents/skills/job/SKILL.md`
 - **เปลี่ยนหน้าตา CV:** แก้ `templates/cv.html` (CSS อยู่ในไฟล์เดียวกัน)
 
 ## สิ่งที่ตัดออกจากต้นฉบับ (และข้อจำกัด)

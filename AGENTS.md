@@ -5,7 +5,7 @@
 - **มือ** = `scripts/*.mjs` คือสคริปต์ที่ไม่ใช้ AI ใช้สำหรับงานที่ต้องได้ผลเหมือนเดิมทุกครั้ง
 - **ความจำ** = ไฟล์ข้อความใน `data/`, `reports/`, `output/`
 
-ผู้ใช้เรียกผ่าน `/job <mode>` (router อยู่ที่ `.claude/skills/job/SKILL.md`)
+ผู้ใช้เรียกผ่าน `/job <mode>` (router อยู่ที่ `.agents/skills/job/SKILL.md`; `.claude/skills/job` เป็น symlink)
 
 ## ไฟล์ของผู้ใช้ vs ไฟล์ของระบบ
 
